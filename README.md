@@ -38,7 +38,7 @@ Other plugins
 
 You might also like these plugins:
 
-  - [tmux-nav-master](https://github.com/TheSast/tmux-nav-master) - Easy cross-navigation with tmux and other programs. 
+  - [tmux-nav-master](https://github.com/TheSast/tmux-nav-master) - Easy cross-navigation between tmux and other terminal applications. 
 
   - [tmux-transient-status](https://github.com/TheSast/tmux-transient-status) - Automatically make your tmux status bar vanish when unneded. 
 
