@@ -1,6 +1,7 @@
 if [ -f "/tmp/tmux-locker/mapcache" ]; then
 	tmux source /tmp/tmux-locker/mapcache
 	rm /tmp/tmux-locker/mapcache -f
+#!/usr/bin/env bash
 else
 	tmux list-keys | grep -- "-T root" >/tmp/tmux-locker/mapcache
 	echo "set-option -g $(tmux show-option -gq prefix)" >>/tmp/tmux-locker/mapcache
