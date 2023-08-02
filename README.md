@@ -11,7 +11,7 @@ Preview
 Usage
 -----
 
-Either use the [configured binding](#configuration) or run `tmux locker-binding` in you terminal to lock away all (other) bindings.
+Either use the [configured binding](#configuration) or run `tmux lock-mappings` in you terminal to lock away all (other) bindings.
 
 Installation
 ------------
