@@ -1,7 +1,7 @@
 Tmux Keylocker
 =======
 
-This tmux [tpm](https://github.com/tmux-plugins/tpm) plugin allow you to lock your keybinds away for a while, until you need to use them again
+This tmux [tpm](https://github.com/tmux-plugins/tpm) plugin allows you to lock your keybinds away for a while, until you need to use them again
 <!--
 Preview
 -------
