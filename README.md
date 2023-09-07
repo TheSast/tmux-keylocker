@@ -33,6 +33,8 @@ set -g @keylocker-bind 'C-g'
 ```
 to remove this binding set this option to `None`.
 
+Note that these are a simple wrapper binds over the command aliases provided by the plugin.
+
 Other plugins
 -------------
 
