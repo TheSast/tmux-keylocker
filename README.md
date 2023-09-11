@@ -11,7 +11,8 @@ Preview
 Usage
 -----
 
-Either use the [configured binding](#configuration) or run `tmux lock-mappings` in you terminal to lock away all (other) bindings.
+Either use the [configured bindings](#configuration) or run `tmux toggle-mappings` in you terminal to lock away all (other) bindings until you run it again.
+You can use `tmux lock-mappings` and `tmux unlock-mappings` if you want to separate those behaviours.
 
 Installation
 ------------
@@ -27,11 +28,13 @@ set -g @plugin 'thesast/tmux-keylocker'
 Configuration
 -------------
 
-This plugins offers one option to be set in your `tmux.conf` with this default:
+This plugins offers three options to be set in your `tmux.conf` with these defaults:
 ```tmux
-set -g @keylocker-bind 'C-g'
+set -g @keylocker-toggle-bind 'C-g'
+set -g @keylocker-lock-bind 'None'
+set -g @keylocker-unlock-bind 'None'
 ```
-to remove this binding set this option to `None`.
+to remove the pre-set binding set the related option option to `None`.
 
 Note that these are a simple wrapper binds over the command aliases provided by the plugin.
 
