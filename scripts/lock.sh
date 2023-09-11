@@ -6,9 +6,6 @@ if ! [ -f "/tmp/tmux-keylocker/mapcache" ]; then
 	tmux unbind -aqT root
 	tmux set-option -g prefix "None"
 	tmux set-option -g prefix2 "None"
-	TK_UNLOCK_BIND="$(grep "tmux-keylocker/scripts/unlock.sh" /tmp/tmux-keylocker/mapcache | sed "s/.*-T root *//" | sed "s/ .*//")"
-	TK_TOGGLE_BIND="$(grep "tmux-keylocker/scripts/toggle.sh" /tmp/tmux-keylocker/mapcache | sed "s/.*-T root *//" | sed "s/ .*//")"
-	[ "$TK_UNLOCK_BIND" ] && tmux bind "$TK_UNLOCK_BIND" -qn unlock-mappings
-	[ "$TK_TOGGLE_BIND" ] && tmux bind "$TK_TOGGLE_BIND" -qn toggle-mappings
-	exit 0
+	grep -E "tmux-(key)?locker/scripts/(unlock)|(toggle)\.sh" "/tmp/tmux-keylocker/mapcache" >"/tmp/tmux-keylocker/unmapcache"
+	tmux source "/tmp/tmux-keylocker/unmapcache"
 fi
