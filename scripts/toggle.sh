@@ -3,6 +3,8 @@ SOCKET_PATH=$(tmux display-message -p "#{socket_path}")
 DATA="/tmp/tmux-keylocker-${SOCKET_PATH#/tmp/tmux-}"
 if [ -d "$DATA" ]; then
 	tmux unlock-mappings
+ 	echo "  $(hostname)  " > $SOCKET_PATH-lockstate
 else
 	tmux lock-mappings
+ 	echo "  [$(hostname)]  " > $SOCKET_PATH-lockstate
 fi
