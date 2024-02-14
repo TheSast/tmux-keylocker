@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TK_HOME="$(command cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TK_HOME="$(dirname "${BASH_SOURCE[0]}")"
 
 source "$TK_HOME/scripts/helpers.sh"
 
