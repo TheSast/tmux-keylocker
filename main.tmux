@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TK_HOME="$(dirname "${BASH_SOURCE[0]}")"
+TK_HOME="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 source "$TK_HOME/scripts/helpers.sh"
 
