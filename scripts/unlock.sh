@@ -5,4 +5,3 @@ if [ -d "$DATA" ]; then
 	tmux source "$DATA/un-mapped-keys"
 	rm -rf "$DATA"
 fi
-echo "  $(hostname)  " > $SOCKET_PATH-lockstate
