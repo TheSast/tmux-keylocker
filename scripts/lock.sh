@@ -12,4 +12,3 @@ if ! [ -d "$DATA" ]; then
 	grep -E "tmux-(key)?locker/scripts/(unlock)|(toggle)\.sh" "$DATA/un-mapped-keys" >"$DATA/re-mapped-keys"
 	tmux source "$DATA/re-mapped-keys"
 fi
-echo "  [$(hostname)]  " > $SOCKET_PATH-lockstate
