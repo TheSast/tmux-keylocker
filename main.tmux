@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TK_HOME="$(command cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TK_HOME="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 source "$TK_HOME/scripts/helpers.sh"
 
@@ -8,9 +8,8 @@ TK_TOGGLE_BIND="$(tmux_option_or_fallback "@keylocker-toggle-bind" "C-g")"
 TK_LOCK_BIND="$(tmux_option "@keylocker-lock-bind")"
 TK_UNLOCK_BIND="$(tmux_option "@keylocker-unlock-bind")"
 
-TMUX_UID="$(tmux display-message -p "#{uid}")"
-SERVER="$(basename "$(tmux display-message -p "#{socket_path}")")"
-DATA="/tmp/tmux-keylocker-$TMUX_UID/$SERVER"
+SOCKET_PATH=$(tmux display-message -p "#{socket_path}")
+DATA="/tmp/tmux-keylocker-${SOCKET_PATH#/tmp/tmux-}"
 rm -rf "$DATA"
 
 if ! tmux show-option -g command-alias | grep -q "(?<!un)lock-mappings="; then
