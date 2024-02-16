@@ -11,4 +11,5 @@ if ! [ -d "$DATA" ]; then
 	tmux set-option -g prefix2 "None"
 	grep -E "tmux-(key)?locker/scripts/(unlock)|(toggle)\.sh" "$DATA/un-mapped-keys" >"$DATA/re-mapped-keys"
 	tmux source "$DATA/re-mapped-keys"
+	tmux set -g @keylocker-status "$DATA/un-mapped-keys"
 fi

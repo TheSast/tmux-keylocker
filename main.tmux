@@ -27,3 +27,5 @@ fi
 [ "$TK_LOCK_BIND" ] && tmux bind -n "$TK_LOCK_BIND" lock-mappings
 [ "$TK_UNLOCK_BIND" ] && tmux bind -n "$TK_UNLOCK_BIND" unlock-mappings
 tmux bind -n "$TK_TOGGLE_BIND" toggle-mappings
+
+tmux set -g @keylocker-status 0

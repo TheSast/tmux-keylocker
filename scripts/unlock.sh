@@ -4,4 +4,5 @@ DATA="/tmp/tmux-keylocker-${SOCKET_PATH#/tmp/tmux-}"
 if [ -d "$DATA" ]; then
 	tmux source "$DATA/un-mapped-keys"
 	rm -rf "$DATA"
+	tmux set -g @keylocker-status 0
 fi
