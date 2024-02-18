@@ -53,10 +53,10 @@ set -g status-right "#(~/.config/tmux/scripts/status/keylocker.bash)"
 ```bash
 #!/usr/bin/env bash
 # script located in ~/.config/tmux/scripts/status/keylocker.bash
-MAPPINGS_FILE="$(tmux show-option -gqv "@keylocker-status")"
-[ "$MAPPINGS_FILE" = "0" ] &&
+MAPPINGS="$(tmux show-option -gqv "@keylocker-status")"
+[ "$MAPPINGS" = "0" ] &&
   echo "#[fg=color0]#[bg=color101] UNLOCKED " ||
-  echo "#[fg=color255]#[bg=color208] LOCKED $(cat $MAPPINGS_FILE | wc -l) MAPPINGS "
+  echo "#[fg=color255]#[bg=color208] LOCKED $(cat $MAPPINGS | wc -l) MAPPINGS "
 
 ```
 ![img/status-script-locked.png](img/status-script-locked.png)
